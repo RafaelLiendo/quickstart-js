@@ -1,16 +1,16 @@
 // Import and configure the Firebase SDK
 // These scripts are made available when the app is served or deployed on Firebase Hosting
 // If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup
-importScripts('/__/firebase/7.6.0/firebase-app.js');
-importScripts('/__/firebase/7.6.0/firebase-messaging.js');
-importScripts('/__/firebase/init.js');
+// importScripts('/__/firebase/7.6.0/firebase-app.js');
+// importScripts('/__/firebase/7.6.0/firebase-messaging.js');
+// importScripts('/__/firebase/init.js');
 
-const messaging = firebase.messaging();
+// const messaging = firebase.messaging();
 
 /**
  * Here is is the code snippet to initialize Firebase Messaging in the Service
  * Worker when your app is not hosted on Firebase Hosting.
-
+*/
  // [START initialize_firebase_in_sw]
  // Give the service worker access to Firebase Messaging.
  // Note that you can only use Firebase Messaging here, other Firebase libraries
@@ -21,14 +21,19 @@ const messaging = firebase.messaging();
  // Initialize the Firebase app in the service worker by passing in the
  // messagingSenderId.
  firebase.initializeApp({
-   'messagingSenderId': 'YOUR-SENDER-ID'
- });
+  apiKey: "...",
+  authDomain: "...",
+  databaseURL: "...",
+  projectId: "...",
+  storageBucket: "...",
+  messagingSenderId: "...",
+  appId: "..."
+});
 
  // Retrieve an instance of Firebase Messaging so that it can handle background
  // messages.
  const messaging = firebase.messaging();
  // [END initialize_firebase_in_sw]
- **/
 
 
 // If you would like to customize notifications that are received in the
